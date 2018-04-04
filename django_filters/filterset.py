@@ -239,7 +239,7 @@ class BaseFilterSet(object):
         if fields == ALL_FIELDS:
             fields = get_all_model_fields(model)
 
-        if not isinstance(fields, OrderedDict) and not isinstance(fields, list) and not isinstance(fields, dict):
+        if not isinstance(fields, OrderedDict) and not isinstance(fields, list) and not isinstance(fields, dict) and not isinstance(fields, tuple):
             fields = fields._meta.fields
 
         # Remove excluded fields
